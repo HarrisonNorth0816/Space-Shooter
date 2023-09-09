@@ -1,5 +1,11 @@
 # Project Name
+
+Space shooter
+
 Context and date
+
+9/9/23
+
 Description
 
 ## Implementation
@@ -11,3 +17,4 @@ Description
 ## Future Development
 
 ## Created by
+Harrison North
