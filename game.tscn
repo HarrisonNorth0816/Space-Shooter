@@ -1,19 +1,19 @@
 [gd_scene load_steps=3 format=3 uid="uid://h62bsxdwcwrv"]
 
-[ext_resource type="Texture2D" uid="uid://b1wmhhw22rntq" path="res://assets/Player.png" id="1_akvgy"]
-[ext_resource type="Script" path="res://Player/Player.gd" id="1_q17lb"]
+[ext_resource type="PackedScene" uid="uid://dd7ipsbrolohf" path="res://Player/player.tscn" id="1_3wr7a"]
+[ext_resource type="PackedScene" uid="uid://brdlo4pfp8gdo" path="res://Asteriod/asteriod.tscn" id="2_ccla1"]
 
 [node name="Game" type="Node2D"]
 
-[node name="Player" type="CharacterBody2D" parent="."]
-position = Vector2(512, 300)
-script = ExtResource("1_q17lb")
-metadata/_edit_group_ = true
+[node name="Player" parent="." instance=ExtResource("1_3wr7a")]
 
-[node name="Sprite2D" type="Sprite2D" parent="Player"]
-scale = Vector2(2.5, 2.5)
-texture = ExtResource("1_akvgy")
+[node name="Asteriod_container" type="Node2D" parent="."]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Player"]
-scale = Vector2(2.5, 2.5)
-polygon = PackedVector2Array(7, -23.8, 7, -15.3, 9.4, -8, 10.1, -8, 12.1, -5, 23, -5, 23, 5, 27, 8, 27, 21, 25.1, 21, 23.1, 24, 10, 24, 10, 22, 6, 27, -6, 27, -6, 24.5, -8.2, 20.6, -9.6, 24, -20.8, 24, -26, 18.8, -26, 9, -22, 6, -22, -3.8, -18.8, -7, -11.2, -7, -10.4, -6.2, -9, -7.1, -9, -8.2, -5.6, -25, -4, -25, -2, -27.7, -2, -29.3, 0.5, -30.4)
+[node name="Asteriod" parent="Asteriod_container" instance=ExtResource("2_ccla1")]
+position = Vector2(100, 100)
+
+[node name="Asteriod2" parent="Asteriod_container" instance=ExtResource("2_ccla1")]
+position = Vector2(700, 500)
+scale = Vector2(1.00303, 1.00493)
+
+[node name="Effects" type="Node2D" parent="."]
