@@ -4,7 +4,7 @@ var speed = 5
 var maxSpeed = 1000
 var rotateSpeed = 0.1
 var Bullet = load("res://Player/bullet.tscn")
-var nose = Vector2(0, -60)
+var nose = Vector2(1.2, -105.5)
 
 func get_input():
 	var to_return = Vector2.ZERO
@@ -19,7 +19,7 @@ func get_input():
 	return to_return.rotated(rotation) 
 
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	velocity += get_input()*speed
 	velocity = velocity.normalized() * clamp(velocity.length(), 0, maxSpeed)
 	
@@ -30,8 +30,8 @@ func _physics_process(delta):
 	
 	if Input.is_action_just_pressed("Shoot"):
 		var bullet = Bullet.instantiate()
-		Bullet.position = position + nose.rotated(rotation)
-		Bullet.rotation = rotation
+		bullet.position = position + nose.rotated(rotation)
+		bullet.rotation = rotation
 		var Effects = get_node_or_null("/root/Game/Effects")
 		if Effects != null:
 			Effects.add_child(bullet)

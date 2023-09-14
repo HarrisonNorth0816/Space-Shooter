@@ -3,19 +3,23 @@
 [ext_resource type="Script" path="res://Player/Bullet.gd" id="1_shexq"]
 [ext_resource type="Texture2D" uid="uid://ty7vqwp18i4w" path="res://assets/Bullet.png" id="2_jp7hf"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5fgoe"]
-radius = 5.96698
-height = 17.7299
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_if2u2"]
+radius = 4.9725
+height = 24.3786
 
 [node name="Bullet" type="Area2D"]
 script = ExtResource("1_shexq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.928475, 1.04733)
+scale = Vector2(1, 1.127)
 texture = ExtResource("2_jp7hf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 4)
 scale = Vector2(1.00553, 0.90243)
-shape = SubResource("CapsuleShape2D_5fgoe")
+shape = SubResource("CapsuleShape2D_if2u2")
+
+[node name="Timer" type="Timer" parent="."]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
