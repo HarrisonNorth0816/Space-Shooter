@@ -20,6 +20,7 @@ scale = Vector2(1.00553, 0.90243)
 shape = SubResource("CapsuleShape2D_if2u2")
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

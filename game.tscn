@@ -1,11 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://h62bsxdwcwrv"]
+[gd_scene load_steps=4 format=3 uid="uid://h62bsxdwcwrv"]
 
 [ext_resource type="PackedScene" uid="uid://dd7ipsbrolohf" path="res://Player/player.tscn" id="1_3wr7a"]
 [ext_resource type="PackedScene" uid="uid://brdlo4pfp8gdo" path="res://Asteriod/asteriod.tscn" id="2_ccla1"]
+[ext_resource type="PackedScene" uid="uid://bxw5e24px6yr8" path="res://Enemy/enemy.tscn" id="3_7tj0e"]
 
 [node name="Game" type="Node2D"]
-
-[node name="Player" parent="." instance=ExtResource("1_3wr7a")]
 
 [node name="Asteriod_container" type="Node2D" parent="."]
 
@@ -17,3 +16,13 @@ position = Vector2(700, 500)
 scale = Vector2(1.00303, 1.00493)
 
 [node name="Effects" type="Node2D" parent="."]
+
+[node name="Player_Container" type="Node2D" parent="."]
+
+[node name="Player" parent="Player_Container" instance=ExtResource("1_3wr7a")]
+position = Vector2(576, 324)
+
+[node name="Enemy_Container" type="Node2D" parent="."]
+
+[node name="Enemy" parent="Enemy_Container" instance=ExtResource("3_7tj0e")]
+position = Vector2(400, 200)

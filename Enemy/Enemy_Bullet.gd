@@ -4,7 +4,7 @@ var speed = 20.0
 var damage = 1.0
 var veloctiy = Vector2.ZERO
 var Effects = null
-var Explosion = load("res://Effects/blueexplosion.tscn")
+var Explosion = load("res://Effects/explosion.tscn")
 
 func _ready():
 	veloctiy = Vector2(0, -speed).rotated(rotation)

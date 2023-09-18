@@ -460,6 +460,7 @@ animations = [{
 }]
 
 [node name="Explosion" type="AnimatedSprite2D"]
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_di6j3")
 frame = 63
 frame_progress = 1.0

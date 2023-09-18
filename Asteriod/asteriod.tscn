@@ -1,13 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://brdlo4pfp8gdo"]
+[gd_scene load_steps=4 format=3 uid="uid://brdlo4pfp8gdo"]
 
 [ext_resource type="Script" path="res://Asteriod/Asteriod.gd" id="1_5aigt"]
 [ext_resource type="Texture2D" uid="uid://cgsurtwect7xv" path="res://assets/Meteor.png" id="2_51gw6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_j8v12"]
+radius = 43.8634
 
 [node name="Asteriod" type="CharacterBody2D"]
 script = ExtResource("1_5aigt")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("2_51gw6")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(14, -28.8, 14, -27, 25, -19, 25, -16.5, 30, -6.5, 30, 6, 28.4, 6, 24.4, 18, 22.8, 18, 14.8, 26, 12.3, 26, 5.4, 29, -5.3, 29, -16, 25.4, -16, 24, -25, 17, -25, 14.5, -30, 4.5, -30, -6.2, -28.6, -13, -27, -13, -18, -26, -15.4, -26, -7, -29.4, -7, -31.2)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -2)
+shape = SubResource("CircleShape2D_j8v12")
+one_way_collision_margin = 0.0
