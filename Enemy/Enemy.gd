@@ -12,7 +12,7 @@ var Explosion = load("res://Effects/explosion.tscn")
 func _physics_process(_delta):
 	position += direction
 	position.y = initial_position.y + sin(position.x/20) * wobble
-	if position.x > 1200: 
+	if position.x > Global.VP.x + 100: 
 		queue_free()
 
 
@@ -35,6 +35,7 @@ func _on_timer_timeout():
 func damage(d):
 	health -= d
 	if health <= 0:
+		Global.update_score(500)
 		Effects = get_node_or_null("/root/Game/Effects")
 		if Effects != null:
 			var explosion = Explosion.instantiate()
