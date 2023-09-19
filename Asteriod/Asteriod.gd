@@ -17,5 +17,11 @@ func _physics_process(_delta):
 func damage(d):
 	health -= d
 	if health <= 0:
+		Effects = get_node_or_null("/root/Game/Effects")
+		if Effects != null:
+			var explosion = Explosion.instantiate()
+			Effects.add_child(explosion)
+			explosion.global_position = global_position
+			hide()
+			await explosion.animation_finished
 		queue_free()
-	
