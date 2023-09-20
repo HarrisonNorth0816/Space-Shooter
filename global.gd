@@ -26,10 +26,10 @@ func _process(_delta):
 			else:
 				get_tree().paused 	= true
 				menu.show()
-	var Asteriod_Container = get_node_or_null("root/Game/Asteriod_Container")
-	var Enemy_Container = get_node_or_null("root/Game/Enemy_Container")
-	if Asteriod_Container != null and Enemy_Container != null:
-		if Asteriod_Container.get_child_count() == 0 and Enemy_Container.get_child_count() == 0:
+	var AC = get_node_or_null("/root/Game/Asteriod_Container")
+	var EC = get_node_or_null("/root/Game/Enemy_Container")
+	if AC != null and EC != null:
+		if AC.get_child_count() == 0 and EC.get_child_count() == 0:
 			get_tree().change_scene_to_file("res://UI/end_game.tscn")
 	
 
