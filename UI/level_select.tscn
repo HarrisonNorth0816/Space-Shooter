@@ -1,0 +1,62 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3y2n6ligs4j3"]
+
+[ext_resource type="Texture2D" uid="uid://csbowjnuurq8f" path="res://assets/solMap.png" id="1_354ka"]
+[ext_resource type="Script" path="res://UI/level_select.gd" id="1_i7yy3"]
+
+[node name="levelSelect" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_i7yy3")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_354ka")
+
+[node name="return" type="Button" parent="."]
+layout_mode = 1
+offset_right = 82.0
+offset_bottom = 31.0
+scale = Vector2(1.5, 1.5)
+text = "-RETURN-"
+
+[node name="MS" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.259
+anchor_top = 0.88
+anchor_right = 0.259
+anchor_bottom = 0.88
+offset_left = -47.368
+offset_top = -15.2401
+offset_right = 46.632
+offset_bottom = 15.7599
+grow_vertical = 2
+text = "-MERCURY-"
+
+[node name="VS" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.326
+anchor_top = 0.695
+anchor_right = 0.326
+anchor_bottom = 0.695
+offset_left = -46.552
+offset_top = -15.36
+offset_right = 47.448
+offset_bottom = 15.64
+grow_vertical = 2
+text = "-VENUS-"
+
+[connection signal="pressed" from="return" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="MS" to="." method="_on_ms_pressed"]
+[connection signal="pressed" from="VS" to="." method="_on_vs_pressed"]
+[connection signal="pressed" from="VS" to="." method="_on_ms_pressed"]
