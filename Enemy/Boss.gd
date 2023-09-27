@@ -1,13 +1,14 @@
 extends CharacterBody2D
 
 var Bullet = load("res://Enemy/enemy_bullet.tscn")
-var health = 10
-var y_positions = [200, 250, 800, 500]
+var health = 30
+var y_positions = [800]
 var initial_position = Vector2.ZERO
 var direction = Vector2(1.5,0)
-var wobble = 30.0
+var wobble = 0
 var Effects = null
 var Explosion = load("res://Effects/explosion.tscn")
+
 
 func _physics_process(_delta):
 	position += direction
@@ -20,6 +21,9 @@ func _ready():
 	initial_position.x = -100
 	initial_position.y = y_positions[randi() % y_positions.size()]
 	position = initial_position
+	
+	
+	
 
 func _on_timer_timeout():
 	var Player = get_node_or_null("/root/Game/Player_Container/Player")
@@ -28,7 +32,7 @@ func _on_timer_timeout():
 		var bullet = Bullet.instantiate()
 		var d = global_position.angle_to_point(Player.global_position) + PI/2
 		bullet.rotation = d
-		bullet.global_position = global_position + Vector2(0, -100).rotated(d)
+		bullet.global_position = global_position + Vector2(0, -1000).rotated(d)
 		Effects.add_child(bullet)
 		
 
@@ -44,11 +48,11 @@ func damage(d):
 			explosion.global_position = global_position
 			hide()
 			await explosion.animation_finished
-
 		queue_free()
 
 
 func _on_area_2d_body_entered(body):
 	if body.name == "Player":
+		$voiceLine.play()   
 		damage(100)
 		body.damage(100)

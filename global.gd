@@ -9,7 +9,8 @@ var time = 0
 func _ready():
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	randomize()
-	VP = get_viewport().size
+	#VP = get_viewport().size
+	VP = Vector2(3083, 2276)
 	var _signal = get_tree().get_root().size_changed.connect(_resize)
 	reset()
 	
@@ -30,7 +31,7 @@ func _process(_delta):
 	var EC = get_node_or_null("/root/Game/Enemy_Container")
 	if AC != null and EC != null:
 		if AC.get_child_count() == 0 and EC.get_child_count() == 0:
-			get_tree().change_scene_to_file("res://UI/end_game.tscn")
+			get_tree().change_scene_to_file("res://UI/success.tscn")
 	
 
 
@@ -53,7 +54,7 @@ func update_time(t):
 
 
 func _resize():
-	VP = get_viewport().size
+	#VP = get_viewport().size
 	var hud = get_node_or_null("/root/Game/UI/HUD")
 	if hud != null:
 		hud.update_lives()
@@ -61,5 +62,5 @@ func _resize():
 func reset():
 	get_tree().paused = false
 	score = 0
-	time = 30
+	time = 180
 	Lives = 3

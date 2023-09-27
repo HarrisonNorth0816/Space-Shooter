@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c82hkv5wrydx0"
+path="res://.godot/imported/enmdeath (2).mp3-aeb8724ba65a58bf71092034b7efe92e.mp3str"
+
+[deps]
+
+source_file="res://assets/enmdeath (2).mp3"
+dest_files=["res://.godot/imported/enmdeath (2).mp3-aeb8724ba65a58bf71092034b7efe92e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

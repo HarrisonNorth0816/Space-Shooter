@@ -1,7 +1,7 @@
 extends Control
 
 var Indicator = load("res://UI/indicator.tscn")
-var lives_pos = Vector2(20, Global.VP.y - 20)
+var lives_pos = Vector2(20, 20 - 20)
 var lives_index = 30
 
 
@@ -18,13 +18,8 @@ func update_time():
 	$Time.text = "Time: " + str(Global.time)
 	
 func update_lives():
-	lives_pos = Vector2(20, Global.VP.y - 20)
-	for child in $Indicator_Container.get_children():
-		child.queue_free()
-	for i in range(Global.Lives):
-		var indicator = Indicator.instantiate()
-		indicator.position = lives_pos + Vector2(lives_index * i, 0)
-		$Indicator_Container.add_child(indicator)
+	$Lives.text = "Lives: " + str(Global.Lives)
+
 	
 
 func _on_timer_timeout():

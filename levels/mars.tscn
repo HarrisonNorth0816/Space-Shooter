@@ -1,0 +1,279 @@
+[gd_scene load_steps=12 format=3 uid="uid://cem0k7vqjq6ri"]
+
+[ext_resource type="Texture2D" uid="uid://3r85aolpdbe0" path="res://assets/space.png" id="1_d816l"]
+[ext_resource type="Script" path="res://Asteriod/Asteriod_Container.gd" id="2_rq108"]
+[ext_resource type="PackedScene" uid="uid://brdlo4pfp8gdo" path="res://Asteriod/asteriod.tscn" id="3_0vvxd"]
+[ext_resource type="Script" path="res://Player/Player_Container.gd" id="4_emmmf"]
+[ext_resource type="PackedScene" uid="uid://dd7ipsbrolohf" path="res://Player/player.tscn" id="5_hof0r"]
+[ext_resource type="PackedScene" uid="uid://bxw5e24px6yr8" path="res://Enemy/enemy.tscn" id="6_g6xtj"]
+[ext_resource type="Script" path="res://UI/HUD.gd" id="7_wxp1k"]
+[ext_resource type="FontFile" uid="uid://b730kkexuk02v" path="res://assets/NewBaskervilleITCbyBT-Bold.otf" id="8_6rd2n"]
+[ext_resource type="Script" path="res://levels/jupiterMenu.gd" id="9_1ipgp"]
+[ext_resource type="AudioStream" uid="uid://2np860yotxin" path="res://assets/battle_song.mp3" id="10_ydo3a"]
+[ext_resource type="Texture2D" uid="uid://c41ty5ygd83h1" path="res://assets/planets/mars.png" id="11_c0tc8"]
+
+[node name="Game" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -641.0
+offset_top = -545.0
+offset_right = 4753.0
+offset_bottom = 2979.0
+texture = ExtResource("1_d816l")
+
+[node name="Effects" type="Node2D" parent="."]
+
+[node name="Asteriod_Container" type="Node2D" parent="."]
+script = ExtResource("2_rq108")
+
+[node name="Asteriod" parent="Asteriod_Container" instance=ExtResource("3_0vvxd")]
+position = Vector2(100, 100)
+
+[node name="Asteriod2" parent="Asteriod_Container" instance=ExtResource("3_0vvxd")]
+position = Vector2(700, 500)
+scale = Vector2(1.00303, 1.00493)
+
+[node name="Asteriod3" parent="Asteriod_Container" instance=ExtResource("3_0vvxd")]
+position = Vector2(3425, 927)
+scale = Vector2(1.00303, 1.00493)
+
+[node name="Asteriod4" parent="Asteriod_Container" instance=ExtResource("3_0vvxd")]
+position = Vector2(2256, 1408)
+scale = Vector2(1.00303, 1.00493)
+
+[node name="Asteriod5" parent="Asteriod_Container" instance=ExtResource("3_0vvxd")]
+position = Vector2(3772, 1257)
+scale = Vector2(1.00303, 1.00493)
+
+[node name="Asteriod6" parent="Asteriod_Container" instance=ExtResource("3_0vvxd")]
+position = Vector2(2488, 672)
+scale = Vector2(1.00303, 1.00493)
+
+[node name="Asteriod7" parent="Asteriod_Container" instance=ExtResource("3_0vvxd")]
+position = Vector2(1682, 242)
+scale = Vector2(1.00303, 1.00493)
+
+[node name="Asteriod8" parent="Asteriod_Container" instance=ExtResource("3_0vvxd")]
+position = Vector2(1467, 544)
+scale = Vector2(1.00303, 1.00493)
+
+[node name="Asteriod9" parent="Asteriod_Container" instance=ExtResource("3_0vvxd")]
+position = Vector2(504, 1333)
+scale = Vector2(1.00303, 1.00493)
+
+[node name="Asteriod10" parent="Asteriod_Container" instance=ExtResource("3_0vvxd")]
+position = Vector2(685, 967)
+scale = Vector2(1.00303, 1.00493)
+
+[node name="Asteriod11" parent="Asteriod_Container" instance=ExtResource("3_0vvxd")]
+position = Vector2(1393, 1304)
+scale = Vector2(1.00303, 1.00493)
+
+[node name="Asteriod14" parent="Asteriod_Container" instance=ExtResource("3_0vvxd")]
+position = Vector2(2213, 1215)
+scale = Vector2(1.00303, 1.00493)
+
+[node name="Asteriod12" parent="Asteriod_Container" instance=ExtResource("3_0vvxd")]
+position = Vector2(455, 1590)
+scale = Vector2(1.00303, 1.00493)
+
+[node name="Asteriod13" parent="Asteriod_Container" instance=ExtResource("3_0vvxd")]
+position = Vector2(293, 1907)
+scale = Vector2(1.00303, 1.00493)
+
+[node name="Player_Container" type="Node2D" parent="."]
+script = ExtResource("4_emmmf")
+
+[node name="Player" parent="Player_Container" instance=ExtResource("5_hof0r")]
+position = Vector2(576, 324)
+
+[node name="Enemy_Container" type="Node2D" parent="."]
+
+[node name="Enemy" parent="Enemy_Container" instance=ExtResource("6_g6xtj")]
+position = Vector2(400, 200)
+
+[node name="Enemy2" parent="Enemy_Container" instance=ExtResource("6_g6xtj")]
+position = Vector2(853, 224)
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="HUD" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("7_wxp1k")
+
+[node name="Score" type="Label" parent="UI/HUD"]
+layout_mode = 1
+offset_left = 10.0
+offset_right = 210.0
+offset_bottom = 40.0
+theme_override_fonts/font = ExtResource("8_6rd2n")
+theme_override_font_sizes/font_size = 20
+text = "Score: "
+vertical_alignment = 1
+
+[node name="Time" type="Label" parent="UI/HUD"]
+layout_mode = 1
+offset_left = 10.0
+offset_top = 50.0
+offset_right = 210.0
+offset_bottom = 90.0
+theme_override_fonts/font = ExtResource("8_6rd2n")
+theme_override_font_sizes/font_size = 20
+text = "Time: "
+vertical_alignment = 1
+
+[node name="Lives" type="Label" parent="UI/HUD"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 100.0
+offset_right = 58.0
+offset_bottom = 126.0
+theme_override_fonts/font = ExtResource("8_6rd2n")
+theme_override_font_sizes/font_size = 20
+text = "Lives: "
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="UI/HUD"]
+autostart = true
+
+[node name="Menu" type="Control" parent="UI"]
+process_mode = 3
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("9_1ipgp")
+
+[node name="ColorRect" type="ColorRect" parent="UI/Menu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.501961)
+
+[node name="Pause" type="Label" parent="UI/Menu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -248.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("8_6rd2n")
+theme_override_font_sizes/font_size = 70
+text = "-PAUSED-"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Restart" type="Button" parent="UI/Menu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -20.0
+offset_right = 100.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("8_6rd2n")
+theme_override_font_sizes/font_size = 20
+text = "Restart
+"
+
+[node name="Quit" type="Button" parent="UI/Menu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = 40.0
+offset_right = 100.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("8_6rd2n")
+theme_override_font_sizes/font_size = 20
+text = "Quit"
+
+[node name="MM" type="Button" parent="UI/Menu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.42
+anchor_right = 0.5
+anchor_bottom = 0.42
+offset_left = -95.0
+offset_top = -20.16
+offset_right = 105.0
+offset_bottom = 19.84
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("8_6rd2n")
+theme_override_font_sizes/font_size = 20
+text = "Main menu"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_ydo3a")
+autoplay = true
+max_distance = 1e+10
+
+[node name="Planet" type="CharacterBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Planet"]
+position = Vector2(4302, 2865)
+scale = Vector2(26.86, 26.86)
+texture = ExtResource("11_c0tc8")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Planet"]
+position = Vector2(4302, 2865)
+scale = Vector2(26.86, 26.86)
+polygon = PackedVector2Array(8, -49, 13, -49, 13, -48, 16, -48, 16, -47, 19, -47, 19, -46, 21, -46, 21, -45, 23, -45, 23, -44, 25, -44, 25, -43, 28, -43, 28, -42, 29, -42, 29, -41, 30, -41, 30, -40, 33, -40, 33, -39, 35, -39, 35, -36, 36, -36, 36, -35, 37, -35, 37, -34, 38, -34, 38, -33, 39, -33, 39, -31, 40, -31, 40, -30, 41, -30, 41, -29, 42, -29, 42, -27, 43, -27, 43, -26, 44, -26, 44, -24, 45, -24, 45, -22, 46, -22, 46, -20, 47, -20, 47, -18, 48, -18, 48, -15, 49, -15, 49, -12, 50, -12, 50, 13, 49, 13, 49, 16, 48, 16, 48, 19, 47, 19, 47, 20, 48, 20, 48, 21, 46, 21, 46, 22, 47, 22, 47, 24, 46, 24, 46, 25, 44, 25, 44, 27, 43, 27, 43, 28, 42, 28, 42, 30, 41, 30, 41, 31, 40, 31, 40, 32, 39, 32, 39, 34, 38, 34, 38, 35, 37, 35, 37, 36, 36, 36, 36, 37, 35, 37, 35, 38, 34, 38, 34, 39, 32, 39, 32, 40, 31, 40, 31, 41, 30, 41, 30, 42, 28, 42, 28, 43, 27, 43, 27, 44, 25, 44, 25, 45, 23, 45, 23, 46, 21, 46, 21, 47, 19, 47, 19, 48, 16, 48, 16, 49, 13, 49, 13, 50, -12, 50, -12, 49, -15, 49, -15, 48, -18, 48, -18, 47, -20, 47, -20, 46, -22, 46, -22, 45, -24, 45, -24, 44, -26, 44, -26, 43, -27, 43, -27, 42, -29, 42, -29, 41, -30, 41, -30, 40, -32, 40, -32, 39, -33, 39, -33, 38, -34, 38, -34, 37, -35, 37, -35, 36, -36, 36, -36, 35, -37, 35, -37, 34, -38, 34, -38, 32, -39, 32, -39, 31, -40, 31, -40, 30, -41, 30, -41, 28, -42, 28, -42, 27, -43, 27, -43, 25, -44, 25, -44, 23, -45, 23, -45, 21, -46, 21, -46, 19, -47, 19, -47, 16, -48, 16, -48, 13, -49, 13, -49, 8, -50, 8, -50, -7, -49, -7, -49, -12, -48, -12, -48, -15, -47, -15, -47, -18, -46, -18, -46, -20, -47, -20, -47, -21, -46, -21, -46, -22, -44, -22, -44, -24, -43, -24, -43, -26, -42, -26, -42, -27, -41, -27, -41, -29, -40, -29, -40, -30, -39, -30, -39, -31, -38, -31, -38, -33, -37, -33, -37, -34, -36, -34, -36, -37, -33, -37, -33, -38, -31, -38, -31, -39, -30, -39, -30, -40, -29, -40, -29, -42, -26, -42, -26, -43, -24, -43, -24, -44, -22, -44, -22, -45, -20, -45, -20, -46, -18, -46, -18, -47, -15, -47, -15, -48, -12, -48, -12, -49, -7, -49, -7, -50, 8, -50)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Planet"]
+position = Vector2(4302, 2865)
+scale = Vector2(26.86, 26.86)
+polygon = PackedVector2Array(-36, 37, -37, 37, -37, 36, -36, 36)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="Planet"]
+position = Vector2(4302, 2865)
+scale = Vector2(26.86, 26.86)
+polygon = PackedVector2Array(-39, -32, -40, -32, -40, -33, -39, -33)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="Planet"]
+position = Vector2(4302, 2865)
+scale = Vector2(26.86, 26.86)
+polygon = PackedVector2Array(-45, -25, -46, -25, -46, -26, -45, -26)
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="Planet"]
+position = Vector2(4302, 2865)
+scale = Vector2(26.86, 26.86)
+polygon = PackedVector2Array(-48, -17, -49, -17, -49, -18, -48, -18)
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="Planet"]
+position = Vector2(4302, 2865)
+scale = Vector2(26.86, 26.86)
+polygon = PackedVector2Array(50, 23, 48, 23, 48, 22, 50, 22)
+
+[connection signal="timeout" from="UI/HUD/Timer" to="UI/HUD" method="_on_timer_timeout"]
+[connection signal="pressed" from="UI/Menu/Restart" to="UI/Menu" method="_on_restart_pressed"]
+[connection signal="pressed" from="UI/Menu/Quit" to="UI/Menu" method="_on_quit_pressed"]
+[connection signal="pressed" from="UI/Menu/MM" to="UI/Menu" method="_on_mm_pressed"]

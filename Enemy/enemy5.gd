@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 var Bullet = load("res://Enemy/enemy_bullet.tscn")
 var health = 10
-var y_positions = [200, 250, 800, 500]
+var y_positions = [500, 550, 1100, 800]
 var initial_position = Vector2.ZERO
 var direction = Vector2(1.5,0)
 var wobble = 30.0
@@ -44,7 +44,7 @@ func damage(d):
 			explosion.global_position = global_position
 			hide()
 			await explosion.animation_finished
-
+			await $eDeath.finished
 		queue_free()
 
 

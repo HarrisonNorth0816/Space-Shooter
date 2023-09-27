@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bxw5e24px6yr8"]
+[gd_scene load_steps=4 format=3 uid="uid://bxw5e24px6yr8"]
 
 [ext_resource type="Script" path="res://Enemy/Enemy.gd" id="1_g42j8"]
 [ext_resource type="Texture2D" uid="uid://ut83mkyxt3it" path="res://assets/Enemy.png" id="2_fk7qq"]
+[ext_resource type="AudioStream" uid="uid://c82hkv5wrydx0" path="res://assets/enmdeath (2).mp3" id="3_wpx4g"]
 
 [node name="Enemy" type="CharacterBody2D"]
 script = ExtResource("1_g42j8")
@@ -22,6 +23,10 @@ autostart = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
 polygon = PackedVector2Array(-1, -71, 6, -70, 10, -66, 12, -59, 15, -48, 17, -39, 23, -30, 26, -43, 36, -51, 46, -47, 50, -40, 54, -34, 56, -24, 56, 23, 48, 25, 42, 29, 32, 32, 21, 33, 17, 38, 15, 50, 14, 64, 9, 75, -5, 74, -13, 65, -15, 52, -18, 39, -26, 25, -33, 30, -43, 28, -54, 22, -54, -35, -45, -45, -33, -50, -26, -42, -23, -34, -14, -41, -13, -58, -12, -69)
+
+[node name="eDeath" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_wpx4g")
+volume_db = 1.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -1,0 +1,60 @@
+[gd_scene load_steps=5 format=3 uid="uid://b1je6ujbsxvfp"]
+
+[ext_resource type="Script" path="res://Enemy/Boss.gd" id="1_cnmb6"]
+[ext_resource type="Texture2D" uid="uid://c77w5ptr5j76p" path="res://assets/boss.png" id="2_q3036"]
+[ext_resource type="AudioStream" uid="uid://c82hkv5wrydx0" path="res://assets/enmdeath (2).mp3" id="3_ug6ql"]
+[ext_resource type="AudioStream" uid="uid://nughqjbcxwig" path="res://assets/voiceLine.mp3" id="4_nr758"]
+
+[node name="Boss" type="CharacterBody2D"]
+script = ExtResource("1_cnmb6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(20, 20)
+texture = ExtResource("2_q3036")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(-239, -273, -76, -180, 33, -218, 54, -173, 224, -267, 250, -165, 93, -97, 122, -75, 314, -41, 329, -20, 328, 10, 105, 80, 260, 176, 237, 235, 167, 244, 44, 154, 18, 190, -39, 197, -73, 156, -290, 271, -346, 214, -305, 152, -127, 80, -124, 46, -261, 54, -309, 20, -365, 7, -362, -48, -299, -50, -214, -82, -144, -99, -356, -226, -312, -273)
+
+[node name="eDeath" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_ug6ql")
+volume_db = 1.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(20, 20)
+polygon = PackedVector2Array(-13, -12, -11, -12, -11, -11, -9, -11, -9, -10, -7, -10, -7, -9, -6, -9, -6, -8, -5, -8, -5, -7, -6, -7, -6, -6, -7, -6, -7, -7, -9, -7, -9, -8, -11, -8, -11, -9, -13, -9, -13, -10, -15, -10, -15, -11, -16, -11, -16, -12, -15, -12, -15, -13, -13, -13)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="."]
+scale = Vector2(20, 20)
+polygon = PackedVector2Array(11, -11, 12, -11, 12, -10, 11, -10, 11, -9, 9, -9, 9, -8, 7, -8, 7, -7, 5, -7, 5, -6, 4, -6, 4, -7, 3, -7, 3, -8, 4, -8, 4, -9, 5, -9, 5, -10, 7, -10, 7, -11, 9, -11, 9, -12, 11, -12)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="."]
+scale = Vector2(20, 20)
+polygon = PackedVector2Array(0, -9, 1, -9, 1, -7, 2, -7, 2, -6, 3, -6, 3, -4, 4, -4, 4, -2, 5, -2, 5, 1, 4, 1, 4, 3, 3, 3, 3, 5, 2, 5, 2, 6, 1, 6, 1, 8, 0, 8, 0, 9, -1, 9, -1, 8, -2, 8, -2, 6, -4, 6, -4, 3, -5, 3, -5, 1, -6, 1, -6, -2, -5, -2, -5, -4, -4, -4, -4, -7, -2, -7, -2, -9, -1, -9, -1, -10, 0, -10)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="."]
+scale = Vector2(20, 20)
+polygon = PackedVector2Array(-7, 2, -11, 2, -11, 1, -14, 1, -14, 0, -17, 0, -17, -1, -14, -1, -14, -2, -11, -2, -11, -3, -7, -3)
+
+[node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="."]
+scale = Vector2(20, 20)
+polygon = PackedVector2Array(10, -2, 13, -2, 13, -1, 16, -1, 16, 0, 13, 0, 13, 1, 10, 1, 10, 2, 6, 2, 6, -3, 10, -3)
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="."]
+scale = Vector2(20, 20)
+polygon = PackedVector2Array(-6, 6, -5, 6, -5, 7, -6, 7, -6, 8, -7, 8, -7, 9, -9, 9, -9, 10, -11, 10, -11, 11, -13, 11, -13, 12, -15, 12, -15, 11, -16, 11, -16, 10, -15, 10, -15, 9, -13, 9, -13, 8, -11, 8, -11, 7, -9, 7, -9, 6, -7, 6, -7, 5, -6, 5)
+
+[node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="."]
+scale = Vector2(20, 20)
+polygon = PackedVector2Array(5, 6, 7, 6, 7, 7, 9, 7, 9, 8, 11, 8, 11, 9, 12, 9, 12, 10, 11, 10, 11, 11, 9, 11, 9, 10, 7, 10, 7, 9, 5, 9, 5, 8, 4, 8, 4, 7, 3, 7, 3, 6, 4, 6, 4, 5, 5, 5)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_nr758")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
