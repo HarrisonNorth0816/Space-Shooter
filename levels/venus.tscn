@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://c03bpldmutl4i"]
+[gd_scene load_steps=14 format=3 uid="uid://c03bpldmutl4i"]
 
 [ext_resource type="Texture2D" uid="uid://3r85aolpdbe0" path="res://assets/space.png" id="1_drl52"]
 [ext_resource type="Script" path="res://Asteriod/Asteriod_Container.gd" id="1_lqt02"]
@@ -6,8 +6,10 @@
 [ext_resource type="Script" path="res://Player/Player_Container.gd" id="3_qxcqg"]
 [ext_resource type="PackedScene" uid="uid://dd7ipsbrolohf" path="res://Player/player.tscn" id="4_bfqql"]
 [ext_resource type="PackedScene" uid="uid://bxw5e24px6yr8" path="res://Enemy/enemy.tscn" id="5_gl25q"]
+[ext_resource type="Script" path="res://Enemy/enemy3.gd" id="6_me3sh"]
 [ext_resource type="Script" path="res://UI/HUD.gd" id="6_q0g7o"]
 [ext_resource type="FontFile" uid="uid://b730kkexuk02v" path="res://assets/NewBaskervilleITCbyBT-Bold.otf" id="7_evikq"]
+[ext_resource type="Script" path="res://Enemy/enemy1231231.gd" id="8_03wks"]
 [ext_resource type="Script" path="res://levels/venusMenu.gd" id="9_vfamy"]
 [ext_resource type="AudioStream" uid="uid://2np860yotxin" path="res://assets/battle_song.mp3" id="10_e7a3u"]
 [ext_resource type="Texture2D" uid="uid://b6koxkccca08d" path="res://assets/planets/venus.png" id="11_piq4t"]
@@ -34,7 +36,7 @@ position = Vector2(700, 500)
 scale = Vector2(1.00303, 1.00493)
 
 [node name="Asteriod3" parent="Asteriod_Container" instance=ExtResource("2_vpomk")]
-position = Vector2(276, 2324)
+position = Vector2(2943, 921)
 scale = Vector2(1.00303, 1.00493)
 
 [node name="Asteriod4" parent="Asteriod_Container" instance=ExtResource("2_vpomk")]
@@ -46,19 +48,19 @@ position = Vector2(3232, 2152)
 scale = Vector2(1.00303, 1.00493)
 
 [node name="Asteriod6" parent="Asteriod_Container" instance=ExtResource("2_vpomk")]
-position = Vector2(2488, 672)
+position = Vector2(2501, 520)
 scale = Vector2(1.00303, 1.00493)
 
 [node name="Asteriod7" parent="Asteriod_Container" instance=ExtResource("2_vpomk")]
-position = Vector2(1682, 242)
+position = Vector2(1758, 280)
 scale = Vector2(1.00303, 1.00493)
 
 [node name="Asteriod8" parent="Asteriod_Container" instance=ExtResource("2_vpomk")]
-position = Vector2(1467, 544)
+position = Vector2(1308, 373)
 scale = Vector2(1.00303, 1.00493)
 
 [node name="Asteriod9" parent="Asteriod_Container" instance=ExtResource("2_vpomk")]
-position = Vector2(504, 1333)
+position = Vector2(3838, 444)
 scale = Vector2(1.00303, 1.00493)
 
 [node name="Asteriod10" parent="Asteriod_Container" instance=ExtResource("2_vpomk")]
@@ -70,7 +72,7 @@ position = Vector2(587, 2047)
 scale = Vector2(1.00303, 1.00493)
 
 [node name="Asteriod14" parent="Asteriod_Container" instance=ExtResource("2_vpomk")]
-position = Vector2(708, 2644)
+position = Vector2(962, 2390)
 scale = Vector2(1.00303, 1.00493)
 
 [node name="Asteriod12" parent="Asteriod_Container" instance=ExtResource("2_vpomk")]
@@ -78,7 +80,7 @@ position = Vector2(455, 1590)
 scale = Vector2(1.00303, 1.00493)
 
 [node name="Asteriod13" parent="Asteriod_Container" instance=ExtResource("2_vpomk")]
-position = Vector2(293, 1907)
+position = Vector2(210, 2066)
 scale = Vector2(1.00303, 1.00493)
 
 [node name="Player_Container" type="Node2D" parent="."]
@@ -88,12 +90,17 @@ script = ExtResource("3_qxcqg")
 position = Vector2(576, 324)
 
 [node name="Enemy_Container" type="Node2D" parent="."]
+script = ExtResource("6_me3sh")
 
 [node name="Enemy" parent="Enemy_Container" instance=ExtResource("5_gl25q")]
 position = Vector2(400, 200)
 
 [node name="Enemy2" parent="Enemy_Container" instance=ExtResource("5_gl25q")]
 position = Vector2(853, 224)
+
+[node name="Enemy3" parent="Enemy_Container" instance=ExtResource("5_gl25q")]
+position = Vector2(1628, 122)
+script = ExtResource("8_03wks")
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -102,9 +109,9 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 1.0
+offset_left = -5.0
 offset_top = 1.0
-offset_right = 1.0
+offset_right = -5.0
 offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
