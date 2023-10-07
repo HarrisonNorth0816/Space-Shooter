@@ -24,7 +24,12 @@ relatedness: While this game may not have the deepest story ever conseieved, I w
 
 Half life 2 combine death effect used for enemies
 
+Music made by me
+
 ## Future Development
+
+none
+
 
 ## Created by
 Harrison North
